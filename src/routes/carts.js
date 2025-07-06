@@ -7,7 +7,10 @@ const cartsPath = './src/data/carts.json';
 router.post('/', (req, res) => {
   const data = fs.readFileSync(cartsPath, 'utf-8');
   const carts = JSON.parse(data);
-  const newCart = { id: Date.now().toString(), products: [] };
+  const newId = carts.length > 0
+    ? parseInt(carts[carts.length - 1].id) + 1
+    : 1;
+  const newCart = { id: newId, products: [] };
   carts.push(newCart);
   fs.writeFileSync(cartsPath, JSON.stringify(carts, null, 2));
   res.status(201).json(newCart);

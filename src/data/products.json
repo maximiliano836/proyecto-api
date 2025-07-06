@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "Café Expreso",
+    "description": "Café fuerte colombiano",
+    "code": "EXP001",
+    "price": 300,
+    "status": true,
+    "stock": 40,
+    "category": "bebida",
+    "thumbnails": [
+      "img/cafe.jpg"
+    ]
+  }
+]
